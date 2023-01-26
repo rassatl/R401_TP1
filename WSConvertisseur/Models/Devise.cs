@@ -56,5 +56,15 @@ namespace WSConvertisseur.Models
             get { return taux; }
             set { taux = value; }
         }
+        /// <summary>
+        /// The equals function
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is Devise devise &&
+                   this.Id == devise.Id &&
+                   this.NomDevise == devise.NomDevise &&
+                   this.Taux == devise.Taux;
+        }
     }
 }

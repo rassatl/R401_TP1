@@ -66,5 +66,12 @@ namespace WSConvertisseur.Models
                    this.NomDevise == devise.NomDevise &&
                    this.Taux == devise.Taux;
         }
+        /// <summary>
+        /// The GetHashCode function
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, NomDevise, Taux);
+        }
     }
 }

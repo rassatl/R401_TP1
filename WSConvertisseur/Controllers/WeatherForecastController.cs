@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace WSConvertisseur.Controllers
-{
+{ 
+    /// <summary>
+    /// The constructor of the class
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -13,11 +16,17 @@ namespace WSConvertisseur.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
+        /// <summary>
+        /// Initalizin logger
+        /// </summary>
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
 
+        /// <summary>
+        /// The get of the class
+        /// </summary>
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
